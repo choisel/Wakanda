@@ -1,0 +1,31 @@
+{
+    "extension":
+    {
+        "name": "Clear CSS IDs",
+        "version": "1.0.0",
+        "description": "This extension clear the extras css IDs to match the new Wakanda 4 CSS IDs management",
+        "icon": "ClearCSSIDs.png",
+        "senders": [
+                    {
+                        "location": "codeEditorToolbar",
+						"actionName": "ClearCSSIDs",
+                    },
+                    {
+                        "location": "studioToolbar",
+                        "actionName": "ClearCSS"
+                    }
+        ],
+        "actions": [
+                    {
+                        "name": "ClearCSSIDs",
+                        "title": "Clear CSS IDs",
+                        "targets" : [{"uti":"com.4d.wakanda.css"}]
+                    },
+                    {
+                        "name": "ClearCSS",
+                        "title": "Clear CSS",
+                    }
+        ],
+        "lifetime": "action_lifetime"
+    }
+}

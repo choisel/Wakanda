@@ -8,7 +8,7 @@ var actions = {};
 function clearCSSIDsInContent(content) {
 	var contentLength = content.length;
 
-	var clearedText = content.replace(/(?:#.*?(\{\s))/g, function (match, offset, string) {
+	var clearedText = content.replace(/(?:#.*?(\{\s|,\s?))/g, function (match, offset, string) {
 		return match.substring(match.lastIndexOf("#"));
 	});
 

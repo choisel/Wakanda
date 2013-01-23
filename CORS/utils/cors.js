@@ -52,10 +52,10 @@ function handleCORSMethod(request, response) {
     headers = request.headers;
     req = new XMLHttpRequest();
 
-    // get the scheme 
+    // get the scheme
     // Note : the isSSL attribute is supported since Wakanda 3
     if (request.hasOwnProperty('isSSL')) {
-	    scheme = request.isSSL ? 'https://' : 'http://';
+        scheme = request.isSSL ? 'https://' : 'http://';
     } else {
         scheme = defaultScheme;
     }
@@ -101,5 +101,10 @@ function handleCORSMethod(request, response) {
     );
 
     // copy response body if it exists
-    response.body = req.responseText || null;
+    var searchString = new RegExp("/rest/", 'g');
+    var result;
+
+    if (req.responseText !== undefined)
+        result = req.responseText.replace(searchString, '\/cors\/');
+    response.body = result || null;
 }

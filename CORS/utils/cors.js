@@ -34,11 +34,14 @@ function handleCORSMethod(request, response) {
         req,
         scheme,
         urlToCall,
-        headers;
+        headers,
+        requestedHeader;
 
 	// add CORS headers
     response.headers["Access-Control-Allow-Origin"] = allowedDomains;
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type";
+    requestedHeader = request.headers["Access-Control-Request-Headers"];
+    response.headers["Access-Control-Allow-Headers"] = requestedHeader !== undefined ? requestedHeader + " ,Content-Type" : "Content-Type";
+
 	if (request.method === "OPTIONS") {
 		// Client is asking for the allowed methods
 		// We provide the allowed methods and stop the execution

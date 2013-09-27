@@ -1,0 +1,12 @@
+[submodule "Commonjs-modules"]
+	path = Commonjs-modules
+	url = https://github.com/choisel/Commonjs-modules.git
+[submodule "CORS"]
+	path = CORS
+	url = https://github.com/choisel/Wakanda-CORS.git
+[submodule "SSE"]
+	path = SSE
+	url = https://github.com/choisel/Wakanda-Server-SSE.git
+[submodule "CSSExtension"]
+	path = CSSExtension
+	url = https://github.com/choisel/Wakanda-Studio-Extensions-ClearCSSIDs.git
